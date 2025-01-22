@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd1amv1o7yutt"]
+
+[ext_resource type="PackedScene" uid="uid://c8n3vw2lr6gf2" path="res://Assets/Cliente/Cliente.tscn" id="1_xphqs"]
+
+[node name="Nivel_Test" type="Node2D"]
+
+[node name="Cliente" parent="." instance=ExtResource("1_xphqs")]
+
+[node name="Camera2D" type="Camera2D" parent="Cliente"]
