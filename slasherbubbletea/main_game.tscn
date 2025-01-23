@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dov8cv8xgk7m5"]
+[gd_scene load_steps=11 format=3 uid="uid://ctk7fvmibd7xe"]
 
 [ext_resource type="Material" uid="uid://bjs63iorfjn6a" path="res://materials/mat_brown.tres" id="1_8xjrf"]
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_gh4ye"]
 [ext_resource type="Script" path="res://scripts/highlight.gd" id="2_8oy2h"]
-[ext_resource type="Shader" path="res://shaders/sh_outline.gdshader" id="2_45qqg"]
 
 [sub_resource type="Environment" id="Environment_hu4fh"]
 background_mode = 1
@@ -16,11 +15,6 @@ fog_light_energy = 1.51
 [sub_resource type="BoxMesh" id="BoxMesh_wkg5b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vvok2"]
-render_priority = 0
-shader = ExtResource("2_45qqg")
-shader_parameter/outline_color = null
-shader_parameter/outline_width = 6.675
-shader_parameter/constant_width = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlimw"]
 next_pass = SubResource("ShaderMaterial_vvok2")
@@ -32,7 +26,7 @@ next_pass = SubResource("ShaderMaterial_vvok2")
 [node name="Scene - Main game" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.79653, 0.604599, 0, -0.604599, 0.79653, 0, 2.195, 4.04)
+transform = Transform3D(1, 0, 0, 0, 0.975354, 0.220646, 0, -0.220646, 0.975354, 0.11332, 2.195, 4.04)
 environment = SubResource("Environment_hu4fh")
 current = true
 fov = 100.0

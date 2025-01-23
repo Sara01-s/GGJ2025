@@ -50,7 +50,6 @@ enum ValidRecipes {
 	UGLY_LIQUID                   = Ingredients.UGLY_LIQUID,
 }
 
-
 static func add_ingredients(ingredients: Ingredients):
 	recipe |= ingredients
 	

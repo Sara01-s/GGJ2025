@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8n3vw2lr6gf2"]
 
 [ext_resource type="Script" path="res://timer.gd" id="1_e7xf1"]
-[ext_resource type="Script" path="res://Assets/Cliente/SceneScript.gd" id="1_y0p0t"]
-[ext_resource type="Texture2D" uid="uid://3uwpenypshc2" path="res://Assets/Cliente/Sadako.png" id="2_5cywv"]
+[ext_resource type="Script" path="res://Assets/Cliente/ClienteScript.gd" id="1_y0p0t"]
 [ext_resource type="Texture2D" uid="uid://bqy52o2smsp4" path="res://Assets/UI/patiencebarBG.png" id="4_mf78w"]
 [ext_resource type="Texture2D" uid="uid://ckwhw7qi6jp78" path="res://Assets/UI/patiencebarPROG.png" id="5_dj6ca"]
+[ext_resource type="Texture2D" uid="uid://dh13ds2skfvxn" path="res://Assets/Cliente/SADAKO_IDLE.png" id="6_cmirc"]
 [ext_resource type="Script" path="res://Assets/Cliente/texture_progress_bar.gd" id="6_kl6xi"]
 
 [node name="Cliente" type="Node2D"]
@@ -15,14 +15,11 @@ wait_time = 20.0
 autostart = true
 script = ExtResource("1_e7xf1")
 
-[node name="Sadako" type="Sprite2D" parent="."]
-texture = ExtResource("2_5cywv")
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = -51.0
-offset_top = -279.0
+offset_top = -282.0
 offset_right = 461.0
-offset_bottom = 233.0
+offset_bottom = 230.0
 scale = Vector2(0.2, 0.2)
 max_value = 20.0
 step = 0.01
@@ -31,6 +28,11 @@ texture_under = ExtResource("4_mf78w")
 texture_progress = ExtResource("5_dj6ca")
 script = ExtResource("6_kl6xi")
 
+[node name="SadakoIdle" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_cmirc")
+
+[connection signal="dañarPersonaje" from="." to="Timer" method="_on_cliente_dañar_personaje"]
 [connection signal="aumentarDificultad" from="Timer" to="Timer" method="_on_aumentar_dificultad"]
 [connection signal="aumentarDificultad" from="Timer" to="TextureProgressBar" method="_on_timer_aumentar_dificultad"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

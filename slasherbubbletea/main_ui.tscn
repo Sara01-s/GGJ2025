@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cocs7taunbhde"]
+[gd_scene load_steps=4 format=3 uid="uid://df5jpmam1lx77"]
 
 [ext_resource type="Texture2D" uid="uid://dwn8jbhicasxb" path="res://sprites/tex_recipe_empty.JPEG" id="1_f25j0"]
 [ext_resource type="Script" path="res://ui_recipe.gd" id="2_7t1de"]

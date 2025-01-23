@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d6gbpcuf7mn7"]
+
+[ext_resource type="Script" path="res://scripts/recipe.gd" id="1_ucerk"]
+[ext_resource type="Texture2D" uid="uid://cwxq3lp3n6s73" path="res://Assets/Vaso/Captura de pantalla de 2025-01-22 00-01-08.png" id="2_rba8l"]
+
+[node name="Vaso" type="Node2D"]
+script = ExtResource("1_ucerk")
+
+[node name="VasoSupuestamente" type="Sprite2D" parent="."]
+texture = ExtResource("2_rba8l")

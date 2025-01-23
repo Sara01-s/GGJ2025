@@ -1,9 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd1amv1o7yutt"]
+[gd_scene load_steps=5 format=3 uid="uid://dd1amv1o7yutt"]
 
 [ext_resource type="PackedScene" uid="uid://c8n3vw2lr6gf2" path="res://Assets/Cliente/Cliente.tscn" id="1_xphqs"]
+[ext_resource type="Texture2D" uid="uid://c7wpc3sfv67fj" path="res://Assets/UI/UI_IconDead.png" id="2_3uhuc"]
+[ext_resource type="Script" path="res://Assets/Nivel/CanvasLayer.gd" id="2_wdvl7"]
+[ext_resource type="Script" path="res://Assets/Nivel/game_controller.gd" id="3_racih"]
 
 [node name="Nivel_Test" type="Node2D"]
 
 [node name="Cliente" parent="." instance=ExtResource("1_xphqs")]
 
 [node name="Camera2D" type="Camera2D" parent="Cliente"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 360.0
+offset_top = -322.0
+offset_right = 572.0
+offset_bottom = -211.0
+script = ExtResource("2_wdvl7")
+
+[node name="Calavera1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3uhuc")
+stretch_mode = 3
+
+[node name="Calavera2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3uhuc")
+stretch_mode = 3
+
+[node name="Calavera3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3uhuc")
+stretch_mode = 3
+
+[node name="GameController" type="Node2D" parent="."]
+script = ExtResource("3_racih")
+
+[connection signal="dañarPersonaje" from="Cliente" to="GameController" method="_on_cliente_dañar_personaje"]
+[connection signal="player_life_updated" from="GameController" to="HBoxContainer" method="_on_game_controller_player_life_updated"]
