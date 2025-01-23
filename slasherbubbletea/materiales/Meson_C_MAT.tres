@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://l3bvobviji7p"]
+
+[ext_resource type="Texture2D" uid="uid://dulsqcw6qclsx" path="res://Texturas/Mesones.png" id="1_68wci"]
+
+[resource]
+albedo_texture = ExtResource("1_68wci")

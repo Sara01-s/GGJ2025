@@ -1,0 +1,391 @@
+[gd_scene load_steps=21 format=3 uid="uid://cparhefuokb78"]
+
+[ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://Assets/UI/UI_Arrow.png" id="1_cnaev"]
+[ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
+[ext_resource type="PackedScene" uid="uid://dvijo3v24r8hx" path="res://Mostrador.fbx" id="1_xv7ot"]
+[ext_resource type="PackedScene" uid="uid://dd1o250dbryaa" path="res://Sala.fbx" id="2_yr3xi"]
+[ext_resource type="PackedScene" uid="uid://dnsghomjeab3e" path="res://Modelos/Pila_vasos_1.fbx" id="5_6ory0"]
+[ext_resource type="PackedScene" uid="uid://drkskqwwgwcfr" path="res://Modelos/Pila_vasos_2.fbx" id="6_r2tuh"]
+[ext_resource type="PackedScene" uid="uid://ccfcwo8a6i4x2" path="res://Modelos/termo.fbx" id="7_btdyb"]
+[ext_resource type="PackedScene" uid="uid://bmopellfwgvwu" path="res://Modelos/topping.fbx" id="8_1txwn"]
+[ext_resource type="PackedScene" uid="uid://cniah4xtp0ch6" path="res://Modelos/hielos.fbx" id="9_hqi05"]
+[ext_resource type="Texture2D" uid="uid://cljt5t4b7tmko" path="res://Assets/Cliente/Sadako_Idle.png" id="10_6n84n"]
+
+[sub_resource type="Animation" id="Animation_ipqiu"]
+resource_name = "PanRIGHT"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(-1.56917, -0.5),
+"update": 0,
+"values": [Vector3(-11.104, 131.219, 411.644), Vector3(150, 131.219, 411.644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.202092, 0, 0), Vector3(-0.342085, -0.253073, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mqmvj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11.104, 131.219, 411.644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.202092, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Control/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5nvim"]
+resource_name = "StageIntro"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-11.104, 163.056, 411.644), Vector3(-11.104, 131.219, 411.644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Control/ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lc7rl"]
+_data = {
+"PanRIGHT": SubResource("Animation_ipqiu"),
+"RESET": SubResource("Animation_mqmvj"),
+"StageIntro": SubResource("Animation_5nvim")
+}
+
+[sub_resource type="Animation" id="Animation_4xhke"]
+resource_name = "ANM_Bttn_slectd_1"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(38, 312), Vector2(35, 308), Vector2(28, 318), Vector2(34, 318), Vector2(41, 317), Vector2(45, 317)]
+}
+
+[sub_resource type="Animation" id="Animation_1aoeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, 312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvcp3"]
+_data = {
+"ANM_Bttn_slectd_1": SubResource("Animation_4xhke"),
+"RESET": SubResource("Animation_1aoeq")
+}
+
+[sub_resource type="Animation" id="Animation_xlfvh"]
+resource_name = "Button_selected"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1014, 312), Vector2(1009, 312), Vector2(1011, 314), Vector2(1013, 312), Vector2(1010, 316), Vector2(1005, 310)]
+}
+
+[sub_resource type="Animation" id="Animation_h4fo1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1014, 312)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vffed"]
+_data = {
+"ANM_Bttn_selectd": SubResource("Animation_xlfvh"),
+"RESET": SubResource("Animation_h4fo1")
+}
+
+[node name="Node" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.979649, 0.200719, 0, -0.200719, 0.979649, -11.104, 131.219, 411.644)
+keep_aspect = 0
+fov = 76.6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_lc7rl")
+}
+autoplay = "StageIntro"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8htf")
+
+[node name="TextureButton2" type="TextureButton" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = 312.0
+offset_right = 190.0
+offset_bottom = 423.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_cnaev")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureButton2"]
+libraries = {
+"": SubResource("AnimationLibrary_yvcp3")
+}
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 312.0
+offset_right = 1166.0
+offset_bottom = 423.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_cnaev")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureButton"]
+libraries = {
+"": SubResource("AnimationLibrary_vffed")
+}
+speed_scale = 1.385
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 646.0
+focus_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Sala" parent="Control" instance=ExtResource("2_yr3xi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8123, 0, 18.266)
+
+[node name="Iluminacion" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, 242.039)
+light_energy = 8.434
+light_size = 0.333
+light_specular = 2.101
+spot_range = 259.155
+spot_attenuation = -0.01
+spot_angle = 45.3654
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 138.299, 216.606, 242.039)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, 92.1915)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 138.299, 216.606, 94.2485)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, -44.3484)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 138.299, 216.606, -44.3484)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, -194.196)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Iluminacion"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 138.299, 216.606, -192.139)
+light_energy = 6.01
+light_size = 0.333
+light_specular = 5.672
+spot_range = 239.768
+spot_attenuation = 0.0
+spot_angle = 43.7492
+
+[node name="ObjScen" type="Node3D" parent="."]
+
+[node name="Pila_vasos_1" parent="ObjScen" instance=ExtResource("5_6ory0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.9966, 60.9867, 200.896)
+
+[node name="Pila_vasos_2" parent="ObjScen" instance=ExtResource("6_r2tuh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.3323, 63.7129, 218.605)
+
+[node name="termo" parent="ObjScen" instance=ExtResource("7_btdyb")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 282.376, 60.0401, 209.68)
+
+[node name="termo2" parent="ObjScen" instance=ExtResource("7_btdyb")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 282.376, 60.0401, 256.572)
+
+[node name="topping" parent="ObjScen" instance=ExtResource("8_1txwn")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 231.658, 59.1639, 170.454)
+
+[node name="topping2" parent="ObjScen" instance=ExtResource("8_1txwn")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 200.6, 59.16, 170.454)
+
+[node name="hielos" parent="ObjScen" instance=ExtResource("9_hqi05")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 170.586, 60.0393, 179.007)
+
+[node name="Mostrador" parent="ObjScen" instance=ExtResource("1_xv7ot")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.719, -1.10005, 164.017)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 91.8485, 119.125)
+pixel_size = 0.1
+billboard = 2
+double_sided = false
+texture = ExtResource("10_6n84n")
+
+[connection signal="pressed" from="Control/TextureButton2" to="Control" method="_on_texture_button_2_pressed"]
+[connection signal="mouse_entered" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="Control/TextureButton" to="Control" method="_on_texture_button_pressed"]

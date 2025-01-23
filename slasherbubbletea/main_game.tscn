@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ctk7fvmibd7xe"]
 
-[ext_resource type="Material" uid="uid://bjs63iorfjn6a" path="res://materials/mat_brown.tres" id="1_8xjrf"]
+[ext_resource type="Material" uid="uid://bjs63iorfjn6a" path="res://materiales/mat_brown.tres" id="1_8xjrf"]
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_gh4ye"]
 [ext_resource type="Script" path="res://scripts/highlight.gd" id="2_8oy2h"]
 
