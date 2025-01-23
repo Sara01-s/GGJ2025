@@ -52,16 +52,16 @@ enum ValidRecipes {
 
 static func add_ingredients(ingredients: Ingredients):
 	recipe |= ingredients
-	
+
 static func remove_ingredients(ingredients: Ingredients):
 	recipe &= ~ingredients
-	
+
 static func has_ingredients(ingredients: Ingredients) -> bool:
 	return (recipe & ingredients) == ingredients
-	
+
 static func clear_ingredients():
 	recipe = 0
-	
+
 func validate_recipe(ingredients: Ingredients) -> bool:
 	if (has_ingredients(Ingredients.UGLY_LIQUID)):
 		return false

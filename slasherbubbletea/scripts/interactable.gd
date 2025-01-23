@@ -18,9 +18,9 @@ func _on_area_3d_mouse_exited() -> void:
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	var is_clicked = event is InputEventMouseButton \
-							and event.pressed \
-							and event.button_index == MOUSE_BUTTON_LEFT
-						
+						   and event.pressed \
+						   and event.button_index == MOUSE_BUTTON_LEFT
+
 	if event is InputEventMouseButton:
 		if is_clicked:
 			clicked.emit()

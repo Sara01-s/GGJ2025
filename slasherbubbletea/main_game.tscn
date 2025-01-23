@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctk7fvmibd7xe"]
+[gd_scene load_steps=10 format=3 uid="uid://dov8cv8xgk7m5"]
 
 [ext_resource type="Material" uid="uid://bjs63iorfjn6a" path="res://materiales/mat_brown.tres" id="1_8xjrf"]
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_gh4ye"]
@@ -14,10 +14,7 @@ fog_light_energy = 1.51
 
 [sub_resource type="BoxMesh" id="BoxMesh_wkg5b"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvok2"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlimw"]
-next_pass = SubResource("ShaderMaterial_vvok2")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u7ypg"]
 
@@ -26,7 +23,7 @@ next_pass = SubResource("ShaderMaterial_vvok2")
 [node name="Scene - Main game" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.975354, 0.220646, 0, -0.220646, 0.975354, 0.11332, 2.195, 4.04)
+transform = Transform3D(1, 0, 0, 0, 0.79653, 0.604599, 0, -0.604599, 0.79653, -0.973457, 3.90487, 4.08787)
 environment = SubResource("Environment_hu4fh")
 current = true
 fov = 100.0
@@ -43,32 +40,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00666046, 2.00542, -0.0047
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Area3D"]
 shape = SubResource("BoxShape3D_7sh10")
 script = ExtResource("1_gh4ye")
+_ingredient = 16
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Area3D"]
-mesh = SubResource("BoxMesh_wkg5b")
-surface_material_override/0 = SubResource("StandardMaterial3D_mlimw")
-script = ExtResource("2_8oy2h")
-
-[node name="Area3D2" type="Area3D" parent="Interactables"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1346, 1.99616, -0.00406682)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Area3D2"]
-shape = SubResource("BoxShape3D_7sh10")
-script = ExtResource("1_gh4ye")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Area3D2"]
-mesh = SubResource("BoxMesh_wkg5b")
-surface_material_override/0 = SubResource("StandardMaterial3D_mlimw")
-script = ExtResource("2_8oy2h")
-
-[node name="Area3D3" type="Area3D" parent="Interactables"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82913, 2.00542, -0.00475085)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Area3D3"]
-shape = SubResource("BoxShape3D_7sh10")
-script = ExtResource("1_gh4ye")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Area3D3"]
 mesh = SubResource("BoxMesh_wkg5b")
 surface_material_override/0 = SubResource("StandardMaterial3D_mlimw")
 script = ExtResource("2_8oy2h")
@@ -85,15 +59,3 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f2yag")
 [connection signal="clicked" from="Interactables/Area3D/CollisionShape3D" to="Interactables/Area3D/MeshInstance3D" method="_on_collision_shape_3d_clicked"]
 [connection signal="enter" from="Interactables/Area3D/CollisionShape3D" to="Interactables/Area3D/MeshInstance3D" method="_on_collision_shape_3d_enter"]
 [connection signal="exit" from="Interactables/Area3D/CollisionShape3D" to="Interactables/Area3D/MeshInstance3D" method="_on_collision_shape_3d_exit"]
-[connection signal="input_event" from="Interactables/Area3D2" to="Interactables/Area3D2/CollisionShape3D" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="Interactables/Area3D2" to="Interactables/Area3D2/CollisionShape3D" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="Interactables/Area3D2" to="Interactables/Area3D2/CollisionShape3D" method="_on_area_3d_mouse_exited"]
-[connection signal="clicked" from="Interactables/Area3D2/CollisionShape3D" to="Interactables/Area3D2/MeshInstance3D" method="_on_collision_shape_3d_clicked"]
-[connection signal="enter" from="Interactables/Area3D2/CollisionShape3D" to="Interactables/Area3D2/MeshInstance3D" method="_on_collision_shape_3d_enter"]
-[connection signal="exit" from="Interactables/Area3D2/CollisionShape3D" to="Interactables/Area3D2/MeshInstance3D" method="_on_collision_shape_3d_exit"]
-[connection signal="input_event" from="Interactables/Area3D3" to="Interactables/Area3D3/CollisionShape3D" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="Interactables/Area3D3" to="Interactables/Area3D3/CollisionShape3D" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="Interactables/Area3D3" to="Interactables/Area3D3/CollisionShape3D" method="_on_area_3d_mouse_exited"]
-[connection signal="clicked" from="Interactables/Area3D3/CollisionShape3D" to="Interactables/Area3D3/MeshInstance3D" method="_on_collision_shape_3d_clicked"]
-[connection signal="enter" from="Interactables/Area3D3/CollisionShape3D" to="Interactables/Area3D3/MeshInstance3D" method="_on_collision_shape_3d_enter"]
-[connection signal="exit" from="Interactables/Area3D3/CollisionShape3D" to="Interactables/Area3D3/MeshInstance3D" method="_on_collision_shape_3d_exit"]
