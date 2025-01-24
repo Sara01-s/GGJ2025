@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://d6gbpcuf7mn7"]
+[gd_scene load_steps=4 format=3 uid="uid://d6gbpcuf7mn7"]
 
+[ext_resource type="Script" path="res://Assets/Vaso/VasoScript3D.gd" id="1_qlt53"]
 [ext_resource type="Script" path="res://scripts/recipe.gd" id="1_ucerk"]
-[ext_resource type="Texture2D" uid="uid://cwxq3lp3n6s73" path="res://Assets/Vaso/Captura de pantalla de 2025-01-22 00-01-08.png" id="2_rba8l"]
+[ext_resource type="Texture2D" uid="uid://bai2aql4fn8pj" path="res://Assets/Bobbas/Leche_Tapioca.png" id="1_yvfxr"]
 
-[node name="Vaso" type="Node2D"]
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_qlt53")
+
+[node name="Vaso" type="Sprite3D" parent="."]
+texture = ExtResource("1_yvfxr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.40236)
+
+[node name="LogicaVaso" type="Node2D" parent="."]
 script = ExtResource("1_ucerk")
-
-[node name="VasoSupuestamente" type="Sprite2D" parent="."]
-texture = ExtResource("2_rba8l")

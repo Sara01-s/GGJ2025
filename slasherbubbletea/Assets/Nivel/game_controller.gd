@@ -12,4 +12,5 @@ func _on_cliente_dañar_personaje() -> void:
 	player_life_updated.emit(player_life)
 	if player_life <= 0:
 		game_over()
+		
 ## Manager que instancia clientes

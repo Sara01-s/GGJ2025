@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd1amv1o7yutt"]
 
 [ext_resource type="PackedScene" uid="uid://c8n3vw2lr6gf2" path="res://Assets/Cliente/Cliente.tscn" id="1_xphqs"]
-[ext_resource type="Texture2D" uid="uid://c7wpc3sfv67fj" path="res://Assets/UI/UI_IconDead.png" id="2_3uhuc"]
 [ext_resource type="Script" path="res://Assets/Nivel/CanvasLayer.gd" id="2_wdvl7"]
+[ext_resource type="Texture2D" uid="uid://3my20tbrhas7" path="res://Assets/UI/UI_HeartFull.png" id="3_8jmfy"]
 [ext_resource type="Script" path="res://Assets/Nivel/game_controller.gd" id="3_racih"]
 
 [node name="Nivel_Test" type="Node2D"]
@@ -20,17 +20,17 @@ script = ExtResource("2_wdvl7")
 
 [node name="Calavera1" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_3uhuc")
+texture = ExtResource("3_8jmfy")
 stretch_mode = 3
 
 [node name="Calavera2" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_3uhuc")
+texture = ExtResource("3_8jmfy")
 stretch_mode = 3
 
 [node name="Calavera3" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_3uhuc")
+texture = ExtResource("3_8jmfy")
 stretch_mode = 3
 
 [node name="GameController" type="Node2D" parent="."]

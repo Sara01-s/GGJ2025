@@ -1,19 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://c8n3vw2lr6gf2"]
 
-[ext_resource type="Script" path="res://timer.gd" id="1_e7xf1"]
-[ext_resource type="Script" path="res://Assets/Cliente/ClienteScript.gd" id="1_y0p0t"]
+[ext_resource type="Script" path="res://Assets/Cliente/Cliente2D.gd" id="1_1g81p"]
+[ext_resource type="Script" path="res://Assets/Cliente/Timer2D.gd" id="2_wqs6s"]
 [ext_resource type="Texture2D" uid="uid://bqy52o2smsp4" path="res://Assets/UI/patiencebarBG.png" id="4_mf78w"]
 [ext_resource type="Texture2D" uid="uid://ckwhw7qi6jp78" path="res://Assets/UI/patiencebarPROG.png" id="5_dj6ca"]
-[ext_resource type="Texture2D" uid="uid://dh13ds2skfvxn" path="res://Assets/Cliente/SADAKO_IDLE.png" id="6_cmirc"]
+[ext_resource type="Texture2D" uid="uid://cljt5t4b7tmko" path="res://Assets/Cliente3D/Sadako_Idle.png" id="6_k753e"]
 [ext_resource type="Script" path="res://Assets/Cliente/texture_progress_bar.gd" id="6_kl6xi"]
 
 [node name="Cliente" type="Node2D"]
-script = ExtResource("1_y0p0t")
+script = ExtResource("1_1g81p")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 autostart = true
-script = ExtResource("1_e7xf1")
+script = ExtResource("2_wqs6s")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_left = -51.0
@@ -30,7 +30,7 @@ script = ExtResource("6_kl6xi")
 
 [node name="SadakoIdle" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_cmirc")
+texture = ExtResource("6_k753e")
 
 [connection signal="dañarPersonaje" from="." to="Timer" method="_on_cliente_dañar_personaje"]
 [connection signal="aumentarDificultad" from="Timer" to="Timer" method="_on_aumentar_dificultad"]

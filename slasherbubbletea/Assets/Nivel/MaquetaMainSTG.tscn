@@ -1,15 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://cparhefuokb78"]
+[gd_scene load_steps=23 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://Assets/UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
 [ext_resource type="PackedScene" uid="uid://dvijo3v24r8hx" path="res://Mostrador.fbx" id="1_xv7ot"]
 [ext_resource type="PackedScene" uid="uid://dd1o250dbryaa" path="res://Sala.fbx" id="2_yr3xi"]
+[ext_resource type="Script" path="res://Assets/Nivel/CanvasLayer.gd" id="4_t0hcf"]
+[ext_resource type="Texture2D" uid="uid://3my20tbrhas7" path="res://Assets/UI/UI_HeartFull.png" id="5_5r3j5"]
 [ext_resource type="PackedScene" uid="uid://dnsghomjeab3e" path="res://Modelos/Pila_vasos_1.fbx" id="5_6ory0"]
 [ext_resource type="PackedScene" uid="uid://drkskqwwgwcfr" path="res://Modelos/Pila_vasos_2.fbx" id="6_r2tuh"]
 [ext_resource type="PackedScene" uid="uid://ccfcwo8a6i4x2" path="res://Modelos/termo.fbx" id="7_btdyb"]
 [ext_resource type="PackedScene" uid="uid://bmopellfwgvwu" path="res://Modelos/topping.fbx" id="8_1txwn"]
 [ext_resource type="PackedScene" uid="uid://cniah4xtp0ch6" path="res://Modelos/hielos.fbx" id="9_hqi05"]
-[ext_resource type="Texture2D" uid="uid://cljt5t4b7tmko" path="res://Assets/Cliente/Sadako_Idle.png" id="10_6n84n"]
+[ext_resource type="PackedScene" uid="uid://cre83gvr35s4j" path="res://Assets/ClienteSpawner/cliente_spawner.tscn" id="12_ykd4p"]
 
 [sub_resource type="Animation" id="Animation_ipqiu"]
 resource_name = "PanRIGHT"
@@ -226,8 +228,6 @@ libraries = {
 }
 autoplay = "StageIntro"
 
-[node name="Node2D" type="Node2D" parent="."]
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -277,6 +277,25 @@ color = Color(0, 0, 0, 1)
 
 [node name="Sala" parent="Control" instance=ExtResource("2_yr3xi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8123, 0, 18.266)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 950.0
+offset_right = 1150.0
+offset_bottom = 59.0
+script = ExtResource("4_t0hcf")
+
+[node name="Corazon" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_5r3j5")
+
+[node name="Corazon2" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_5r3j5")
+
+[node name="Corazon3" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_5r3j5")
 
 [node name="Iluminacion" type="Node3D" parent="."]
 
@@ -378,12 +397,8 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 [node name="Mostrador" parent="ObjScen" instance=ExtResource("1_xv7ot")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.719, -1.10005, 164.017)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 91.8485, 119.125)
-pixel_size = 0.1
-billboard = 2
-double_sided = false
-texture = ExtResource("10_6n84n")
+[node name="ClienteSpawner" parent="." instance=ExtResource("12_ykd4p")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)
 
 [connection signal="pressed" from="Control/TextureButton2" to="Control" method="_on_texture_button_2_pressed"]
 [connection signal="mouse_entered" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_entered"]

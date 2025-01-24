@@ -24,8 +24,8 @@ enum Ingredients {
 enum ValidRecipes {
 	NONE                          = Ingredients.NONE,
 	
-	BIG_GLASS                     = Ingredients.GLASS_BIG,
-	BIG_GLASS_CHERRY              = Ingredients.GLASS_BIG + Ingredients.CHERRY,
+	#BIG_GLASS                     = Ingredients.GLASS_BIG,
+	#BIG_GLASS_CHERRY              = Ingredients.GLASS_BIG + Ingredients.CHERRY,
 	HAPPY_BLOOD                   = Ingredients.GLASS_BIG + Ingredients.CHERRY + Ingredients.MILK,
 	
 	SMALL_GLASS_PASSION_FRUIT     = Ingredients.GLASS_SMALL + Ingredients.PASSION_FRUIT,
