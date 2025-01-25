@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh13ds2skfvxn"
-path="res://.godot/imported/SADAKO_IDLE.png-b278081fd6ce5a78a38af86a8e611f62.ctex"
+uid="uid://bmns6l7i0vkd2"
+path="res://.godot/imported/Title_piece_2.png-503b228478ee8d309d4710067d9fc35b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cliente/SADAKO_IDLE.png"
-dest_files=["res://.godot/imported/SADAKO_IDLE.png-b278081fd6ce5a78a38af86a8e611f62.ctex"]
+source_file="res://UI/Title_piece_2.png"
+dest_files=["res://.godot/imported/Title_piece_2.png-503b228478ee8d309d4710067d9fc35b.ctex"]
 
 [params]
 

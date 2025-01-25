@@ -36,5 +36,4 @@ stretch_mode = 3
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("3_racih")
 
-[connection signal="dañarPersonaje" from="Cliente" to="GameController" method="_on_cliente_dañar_personaje"]
 [connection signal="player_life_updated" from="GameController" to="HBoxContainer" method="_on_game_controller_player_life_updated"]
