@@ -10,6 +10,7 @@ signal clicked
 func _on_area_3d_mouse_entered() -> void:
 	Recipe.add_ingredients(_ingredient)
 	enter.emit()
+	print(_ingredient)
 	print("Entered interactable")
 
 func _on_area_3d_mouse_exited() -> void:

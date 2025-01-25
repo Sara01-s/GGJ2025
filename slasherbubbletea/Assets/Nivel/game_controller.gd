@@ -8,11 +8,12 @@ func _ready() -> void:
 
 func game_over():
 	print("Moriste hijupe")
+	get_tree().change_scene_to_file("res://Desvivido.tscn")
 
 func _on_cliente_dañar_personaje() -> void:
 	player_life -= 1
 	print(player_life, " has recibido daño")
-	player_life_updated.emit(player_life)
+	player_life_updated.emit()
 	if player_life <= 0:
 		game_over()
 		

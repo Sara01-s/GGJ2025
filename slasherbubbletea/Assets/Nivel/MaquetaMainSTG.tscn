@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=32 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
@@ -223,6 +223,9 @@ _data = {
 "RESET": SubResource("Animation_h4fo1")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xogq"]
+size = Vector3(18.1138, 23.0496, 16.3531)
+
 [node name="Node" type="Node"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -393,6 +396,12 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 233.864, 60.2307, 175.1
 
 [node name="termo_leche" parent="ObjScen" instance=ExtResource("13_fegr4")]
 transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 284.208, 61.0148, 201.291)
+
+[node name="Area3D" type="Area3D" parent="ObjScen/termo_leche"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/termo_leche/Area3D"]
+transform = Transform3D(1, 0, 2.24532e-12, 0, 1, 0, -2.24532e-12, 0, 1, 0.960159, 11.0248, 0.0530396)
+shape = SubResource("BoxShape3D_4xogq")
 
 [node name="termo_te" parent="ObjScen" instance=ExtResource("14_7j5yt")]
 transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 286.5, 60.8301, 251.449)
