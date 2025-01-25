@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=31 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
@@ -8,11 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://3my20tbrhas7" path="res://Assets/UI/UI_HeartFull.png" id="5_5r3j5"]
 [ext_resource type="PackedScene" uid="uid://dnsghomjeab3e" path="res://Modelos/Pila_vasos_1.fbx" id="5_6ory0"]
 [ext_resource type="PackedScene" uid="uid://drkskqwwgwcfr" path="res://Modelos/Pila_vasos_2.fbx" id="6_r2tuh"]
-[ext_resource type="PackedScene" uid="uid://ccfcwo8a6i4x2" path="res://Modelos/termo.fbx" id="7_btdyb"]
-[ext_resource type="PackedScene" uid="uid://bmopellfwgvwu" path="res://Modelos/topping.fbx" id="8_1txwn"]
+[ext_resource type="PackedScene" uid="uid://crx47s1jvrj5t" path="res://Modelos/Basurero.fbx" id="7_invec"]
+[ext_resource type="PackedScene" uid="uid://c020fhpgji6v2" path="res://Modelos/bandeja.fbx" id="8_53uk7"]
 [ext_resource type="PackedScene" uid="uid://cniah4xtp0ch6" path="res://Modelos/hielos.fbx" id="9_hqi05"]
+[ext_resource type="PackedScene" uid="uid://bcgqn2d2h27ux" path="res://Modelos/jelly.fbx" id="12_dngss"]
 [ext_resource type="PackedScene" uid="uid://d6gbpcuf7mn7" path="res://Assets/Vaso/Vaso.tscn" id="12_x3u7p"]
 [ext_resource type="PackedScene" uid="uid://cre83gvr35s4j" path="res://Assets/ClienteSpawner/cliente_spawner.tscn" id="12_ykd4p"]
+[ext_resource type="PackedScene" uid="uid://bxoc81560xt5l" path="res://Modelos/termo_te.fbx" id="13_fegr4"]
+[ext_resource type="PackedScene" uid="uid://poihqbtearry" path="res://Modelos/termo_leche.fbx" id="14_7j5yt"]
+[ext_resource type="PackedScene" uid="uid://cq3fbokb2nqjx" path="res://Modelos/vaso.fbx" id="15_fw3ip"]
+[ext_resource type="PackedScene" uid="uid://ghyanu0x402o" path="res://Modelos/tapioca.fbx" id="16_a3t3r"]
+[ext_resource type="PackedScene" uid="uid://bfhscv1y84o66" path="res://Modelos/maracuya.fbx" id="19_4g4e0"]
+[ext_resource type="PackedScene" uid="uid://crtvqmuw1w3an" path="res://Modelos/cereza.fbx" id="20_420qo"]
 
 [sub_resource type="Animation" id="Animation_ipqiu"]
 resource_name = "PanRIGHT"
@@ -299,7 +306,7 @@ layout_mode = 2
 texture = ExtResource("5_5r3j5")
 
 [node name="Iluminacion" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.743, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.34848, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Iluminacion"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, 242.039)
@@ -375,29 +382,84 @@ spot_angle = 43.7492
 
 [node name="ObjScen" type="Node3D" parent="."]
 
-[node name="Pila_vasos_1" parent="ObjScen" instance=ExtResource("5_6ory0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.9966, 60.9867, 200.896)
-
-[node name="Pila_vasos_2" parent="ObjScen" instance=ExtResource("6_r2tuh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.3323, 63.7129, 218.605)
-
-[node name="termo" parent="ObjScen" instance=ExtResource("7_btdyb")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 282.376, 60.0401, 209.68)
-
-[node name="termo2" parent="ObjScen" instance=ExtResource("7_btdyb")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 282.376, 60.0401, 256.572)
-
-[node name="topping" parent="ObjScen" instance=ExtResource("8_1txwn")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 231.658, 59.1639, 170.454)
-
-[node name="topping2" parent="ObjScen" instance=ExtResource("8_1txwn")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 200.6, 59.16, 170.454)
-
-[node name="hielos" parent="ObjScen" instance=ExtResource("9_hqi05")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 170.586, 60.0393, 179.007)
-
 [node name="Mostrador" parent="ObjScen" instance=ExtResource("1_xv7ot")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.719, -1.10005, 164.017)
+
+[node name="Basurero" parent="ObjScen" instance=ExtResource("7_invec")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28.5025, 6.48973, 213.263)
+
+[node name="hielos" parent="ObjScen" instance=ExtResource("9_hqi05")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 233.864, 60.2307, 175.164)
+
+[node name="termo_leche" parent="ObjScen" instance=ExtResource("13_fegr4")]
+transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 284.208, 61.0148, 201.291)
+
+[node name="termo_te" parent="ObjScen" instance=ExtResource("14_7j5yt")]
+transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 286.5, 60.8301, 251.449)
+
+[node name="vaso_chico" parent="ObjScen" instance=ExtResource("15_fw3ip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 79.2338, 60.8348, 174.159)
+
+[node name="grande" parent="ObjScen" instance=ExtResource("15_fw3ip")]
+transform = Transform3D(2, 0, 0, 0, 2.78217, 0, 0, 0, 2, 101.772, 59.6864, 170.339)
+
+[node name="Pila_vasos_2" parent="ObjScen" instance=ExtResource("6_r2tuh")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -63.2422, 60.4577, 217.009)
+
+[node name="Pila_vasos_1" parent="ObjScen" instance=ExtResource("5_6ory0")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -81.4166, 58.3015, 223.915)
+
+[node name="Item_Jelly" type="Node3D" parent="ObjScen"]
+
+[node name="bandeja" parent="ObjScen/Item_Jelly" instance=ExtResource("8_53uk7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 128.446, 59.7806, 171.6)
+
+[node name="jelly" parent="ObjScen/Item_Jelly" instance=ExtResource("12_dngss")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 128.961, 62.3572, 173.42)
+
+[node name="Item_Tapioca" type="Node3D" parent="ObjScen"]
+
+[node name="tapioca" parent="ObjScen/Item_Tapioca" instance=ExtResource("16_a3t3r")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 150.631, 62.8722, 173.55)
+
+[node name="bandeja2" parent="ObjScen/Item_Tapioca" instance=ExtResource("8_53uk7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 149.945, 59.6266, 171.039)
+
+[node name="Item_Maracuya" type="Node3D" parent="ObjScen"]
+
+[node name="maracuya" parent="ObjScen/Item_Maracuya" instance=ExtResource("19_4g4e0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 170.716, 62.4054, 171.234)
+
+[node name="bandeja3" parent="ObjScen/Item_Maracuya" instance=ExtResource("8_53uk7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 170.128, 59.6266, 171.039)
+
+[node name="Item_Cereza" type="Node3D" parent="ObjScen"]
+
+[node name="cereza" parent="ObjScen/Item_Cereza" instance=ExtResource("20_420qo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 191.303, 61.4904, 169.597)
+
+[node name="bandeja4" parent="ObjScen/Item_Cereza" instance=ExtResource("8_53uk7")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 190.475, 59.6266, 171.039)
+
+[node name="Clutter" type="Node3D" parent="ObjScen"]
+
+[node name="Pila_vasos_3" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -59.3513, 41.8016, 195.11)
+
+[node name="Pila_vasos_4" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -59.3513, 41.8016, 206.361)
+
+[node name="Pila_vasos_5" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -59.3513, 41.8016, 222.658)
+
+[node name="Pila_vasos_6" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -59.3513, 41.8016, 233.909)
+
+[node name="Pila_vasos_7" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -75.4174, 41.8016, 222.658)
+
+[node name="Pila_vasos_8" parent="ObjScen/Clutter" instance=ExtResource("5_6ory0")]
+transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -75.4174, 41.8016, 233.909)
 
 [node name="VasoLogic" parent="." instance=ExtResource("12_x3u7p")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6022, 94, 176.794)

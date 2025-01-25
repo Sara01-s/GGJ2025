@@ -3,6 +3,9 @@ extends Node2D
 signal player_life_updated(player_life)
 @export var player_life = 3
 
+func _ready() -> void:
+		pass
+
 func game_over():
 	print("Moriste hijupe")
 

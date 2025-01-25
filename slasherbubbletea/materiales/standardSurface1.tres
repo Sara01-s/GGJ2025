@@ -1,9 +1,12 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3rsh6i10l15a"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://sx35o66pfv7d"]
+
+[ext_resource type="Texture2D" uid="uid://kck3nby6m17n" path="res://Texturas/T_props.png" id="1_275jh"]
 
 [resource]
 resource_name = "standardSurface1"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
+albedo_texture = ExtResource("1_275jh")
 roughness = 0.5
 emission_enabled = true
 emission = Color(1, 1, 1, 1)

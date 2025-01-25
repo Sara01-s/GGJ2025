@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjhadtyon67vf"]
+
+[ext_resource type="Texture2D" uid="uid://kck3nby6m17n" path="res://Texturas/T_props.png" id="1_ryfde"]
+
+[resource]
+resource_name = "Vasos"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ryfde")
+emission_enabled = true

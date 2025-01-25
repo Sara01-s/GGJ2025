@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/Pila_vasos_1.fbx-ba23323e71dd6f17be577efdcd31
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1000.0
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -33,9 +33,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"standardSurface1": {
+"standardSurface4": {
 "use_external/enabled": true,
-"use_external/path": "res://Materiales/standardSurface1.tres"
+"use_external/path": "res://Modelos/standardSurface4.tres"
 }
 }
 }
