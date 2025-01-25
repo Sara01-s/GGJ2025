@@ -13,6 +13,7 @@ func game_over():
 func _on_cliente_dañar_personaje() -> void:
 	player_life -= 1
 	print(player_life, " has recibido daño")
+	get_node_or_null("../../Control").get_child(4)._on_game_controller_player_life_updated(player_life)
 	player_life_updated.emit()
 	if player_life <= 0:
 		game_over()

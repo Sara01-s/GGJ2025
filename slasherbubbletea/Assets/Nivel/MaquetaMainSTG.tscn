@@ -282,7 +282,7 @@ speed_scale = 1.385
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
 offset_right = 1155.0
-offset_bottom = 646.0
+offset_bottom = 659.0
 focus_mode = 1
 color = Color(0, 0, 0, 1)
 

@@ -5,6 +5,7 @@ extends Control
 @onready var text_button2: TextureButton = $TextureButton2
 
 @export var works = 1
+@export var Plyr_hp = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

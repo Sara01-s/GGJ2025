@@ -35,7 +35,7 @@ func _on_timer_3d_timeout() -> void:
 	dañarPersonaje.emit()
 	sadako_idle.texture = SamAngry
 	timer.start()
-	get_node_or_null("../Control").get_child(4)._on_game_controller_player_life_updated(1)
+	
 
 func _on_controlador_player_life_updated(player_life: Variant) -> void:
 	uiUpdate.emit(player_life)
