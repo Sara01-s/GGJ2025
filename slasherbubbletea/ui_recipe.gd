@@ -2,8 +2,8 @@ extends TextureRect
 
 var recipe_texture_dict = {
 	Recipe.ValidRecipes.NONE: null,
-	Recipe.ValidRecipes.BIG_GLASS: preload("res://sprites/tex_recipe_big_glass.JPEG"),
-	Recipe.ValidRecipes.BIG_GLASS_CHERRY: preload("res://sprites/tex_recipe_cherry.JPEG"),
+	#Recipe.ValidRecipes.BIG_GLASS: preload("res://sprites/tex_recipe_big_glass.JPEG"),
+	#Recipe.ValidRecipes.BIG_GLASS_CHERRY: preload("res://sprites/tex_recipe_cherry.JPEG"),
 	Recipe.ValidRecipes.HAPPY_BLOOD: preload("res://sprites/tex_recipe_happy_blood.JPEG"),
 	Recipe.ValidRecipes.SMALL_GLASS_PASSION_FRUIT: preload("res://sprites/tex_recipe_passion_fruit.JPEG"),
 	Recipe.ValidRecipes.SMALL_GLASS_PASSION_FRUIT_TEA: preload("res://sprites/tex_recipe_passion_fruit_tea.JPEG"),

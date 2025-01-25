@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cplpanlvtpwbd"]
+[gd_scene load_steps=20 format=3 uid="uid://dad6ati1w4l0r"]
 
 [ext_resource type="Texture2D" uid="uid://b2btbcejn7x7d" path="res://UI/Title_piece_3.png" id="1_0hob8"]
 [ext_resource type="Script" path="res://title_ctrl.gd" id="1_qqrqi"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=24 format=3 uid="uid://c7l88rbq43bhs"]
 
-[ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://Assets/UI/UI_Arrow.png" id="1_cnaev"]
+[ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
 [ext_resource type="PackedScene" uid="uid://dvijo3v24r8hx" path="res://Mostrador.fbx" id="1_xv7ot"]
 [ext_resource type="PackedScene" uid="uid://dd1o250dbryaa" path="res://Sala.fbx" id="2_yr3xi"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccfcwo8a6i4x2" path="res://Modelos/termo.fbx" id="7_btdyb"]
 [ext_resource type="PackedScene" uid="uid://bmopellfwgvwu" path="res://Modelos/topping.fbx" id="8_1txwn"]
 [ext_resource type="PackedScene" uid="uid://cniah4xtp0ch6" path="res://Modelos/hielos.fbx" id="9_hqi05"]
+[ext_resource type="PackedScene" uid="uid://d6gbpcuf7mn7" path="res://Assets/Vaso/Vaso.tscn" id="12_x3u7p"]
 [ext_resource type="PackedScene" uid="uid://cre83gvr35s4j" path="res://Assets/ClienteSpawner/cliente_spawner.tscn" id="12_ykd4p"]
 
 [sub_resource type="Animation" id="Animation_ipqiu"]
@@ -298,6 +299,7 @@ layout_mode = 2
 texture = ExtResource("5_5r3j5")
 
 [node name="Iluminacion" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 110.743, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Iluminacion"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -147.205, 216.606, 242.039)
@@ -397,6 +399,9 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 [node name="Mostrador" parent="ObjScen" instance=ExtResource("1_xv7ot")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.719, -1.10005, 164.017)
 
+[node name="VasoLogic" parent="." instance=ExtResource("12_x3u7p")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6022, 94, 176.794)
+
 [node name="ClienteSpawner" parent="." instance=ExtResource("12_ykd4p")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)
 
@@ -404,3 +409,4 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)
 [connection signal="mouse_entered" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Control/TextureButton" to="Control" method="_on_texture_button_pressed"]
+[connection signal="pedidoEquivocado" from="VasoLogic" to="Control/HBoxContainer" method="_on_vaso_logic_pedido_equivocado"]

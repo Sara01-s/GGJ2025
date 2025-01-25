@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbtbs7x7g87ge"]
 
 [ext_resource type="Texture2D" uid="uid://c8575ireat6sv" path="res://UI/game_ova.png" id="1_h2qte"]
-[ext_resource type="Script" path="res://Script/GameOverCTRL.gd" id="1_qxrj7"]
+[ext_resource type="Script" path="res://scripts/GameOverCTRL.gd" id="1_qxrj7"]
 [ext_resource type="Shader" path="res://Shaders2D/aaaaaaa.gdshader" id="3_2433o"]
 [ext_resource type="Texture2D" uid="uid://c0e55csluond4" path="res://UI/GO_samara.png" id="4_ga826"]
 
