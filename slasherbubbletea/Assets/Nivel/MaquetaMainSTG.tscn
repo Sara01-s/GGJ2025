@@ -462,7 +462,7 @@ transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.8
 transform = Transform3D(3.43923e-15, 7.86805e-08, 1.8, 1.8, -7.86805e-08, 0, 7.86805e-08, 1.8, -7.86805e-08, -75.4174, 41.8016, 233.909)
 
 [node name="VasoLogic" parent="." instance=ExtResource("12_x3u7p")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.6022, 94, 176.794)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 29.9937, 94, 195.551)
 
 [node name="ClienteSpawner" parent="." instance=ExtResource("12_ykd4p")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)

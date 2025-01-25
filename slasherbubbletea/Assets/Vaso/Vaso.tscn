@@ -7,9 +7,11 @@
 script = ExtResource("1_qlt53")
 
 [node name="Vaso" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.40236)
+visible = false
 
 [node name="LogicaVaso" type="Node2D" parent="."]
 script = ExtResource("1_ucerk")
