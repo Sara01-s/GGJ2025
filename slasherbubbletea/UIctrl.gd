@@ -86,52 +86,52 @@ func _on_texture_rect_gui_input(event: InputEvent) -> void:
 #### ya que va por orden de visibilidad/arbol, y full rect tapa el area de deteccion 3D.
 #################          Mouse enter
 func _on_area_3d_mouse_entered() -> void:
-	termoLeche.set_surface_override_material(0, HIGHLIGHT)
+	termoLeche.material_overlay = HIGHLIGHT
 	pass # Replace with function body.
 
 
 func _on_area_hielo_mouse_entered() -> void:
-	hielos.set_surface_override_material(0, HIGHLIGHT)
+	hielos.material_overlay = HIGHLIGHT
 	pass # Replace with function body.
 
 
 func _on_area_te_mouse_entered() -> void:
-	termoTe.set_surface_override_material(0, HIGHLIGHT)
+	termoTe.material_overlay = HIGHLIGHT
 	pass # Replace with function body.
 
 
 func _on_area_basu_mouse_entered() -> void:
-	get_tree().set_group("basurero","material_override", HIGHLIGHT)
+	get_tree().set_group("basurero","material_overlay", HIGHLIGHT)
 	pass # Multiples meshes, los agrupe y use set group para cambiar sus props.
 
 
 func _on_area_vaso_chi_mouse_entered() -> void:
-	vasochi.set_surface_override_material(0, HIGHLIGHT)
+	vasochi.material_overlay = HIGHLIGHT
 	pass # Replace with function body.
 
 
 func _on_area_vasogra_mouse_entered() -> void:
-	vasogra.set_surface_override_material(0, HIGHLIGHT)
+	vasogra.material_overlay = HIGHLIGHT
 	pass # Replace with function body.
 
 
 func _on_area_jelly_mouse_entered() -> void:
-	get_tree().set_group("Jelly","material_override", HIGHLIGHT)
+	get_tree().set_group("Jelly","material_overlay", HIGHLIGHT)
 	pass # Replace with function body.
 
 
 func _on_area_tapi_mouse_entered() -> void:
-	get_tree().set_group("Tapioca","material_override", HIGHLIGHT)
+	get_tree().set_group("Tapioca","material_overlay", HIGHLIGHT)
 	pass # Replace with function body.
 
 
 func _on_area_mara_mouse_entered() -> void:
-	get_tree().set_group("Maracuya","material_override", HIGHLIGHT)
+	get_tree().set_group("Maracuya","material_overlay", HIGHLIGHT)
 	pass # Replace with function body.
 
 
 func _on_area_cere_mouse_entered() -> void:
-	get_tree().set_group("Cereza","material_override", HIGHLIGHT)
+	get_tree().set_group("Cereza","material_overlay", HIGHLIGHT)
 	pass # Replace with function body.
 
 
@@ -139,58 +139,54 @@ func _on_area_cere_mouse_entered() -> void:
 #################       Mouse exit    ###################
 
 func _on_area_3d_mouse_exited() -> void:
-	termoLeche.set_surface_override_material(0, null)
+	termoLeche.material_overlay = null
 	pass # Replace with function body.
 
 
 func _on_area_te_mouse_exited() -> void:
-	termoTe.set_surface_override_material(0,null)
+	termoTe.material_overlay = null
 	pass # Replace with function body.
 
 
 func _on_area_hielo_mouse_exited() -> void:
-	hielos.set_surface_override_material(0, null)
+	hielos.material_overlay = null
 	pass # Replace with function body.
 
 
 func _on_area_basu_mouse_exited() -> void:
-	get_tree().set_group("basurero","material_override", null)
+	get_tree().set_group("basurero","material_overlay", null)
 	pass # Replace with function body.
 
 
 func _on_area_vaso_chi_mouse_exited() -> void:
-	vasochi.set_surface_override_material(0, null)
+	vasochi.material_overlay = null
 	pass # Replace with function body.
 
 
 func _on_area_vasogra_mouse_exited() -> void:
-	vasogra.set_surface_override_material(0, null)
+	vasogra.material_overlay = null
 	pass # Replace with function body.
 
 
 func _on_area_jelly_mouse_exited() -> void:
-	get_tree().set_group("Jelly","material_override", null)
+	get_tree().set_group("Jelly","material_overlay", null)
 	pass # Replace with function body.
 
 
 func _on_area_tapi_mouse_exited() -> void:
-	get_tree().set_group("Tapioca","material_override", null)
+	get_tree().set_group("Tapioca","material_overlay", null)
 	pass # Replace with function body.
 
 
 func _on_area_mara_mouse_exited() -> void:
-	get_tree().set_group("Maracuya","material_override", null)
+	get_tree().set_group("Maracuya","material_overlay", null)
 	pass # Replace with function body.
 
 
 func _on_area_cere_mouse_exited() -> void:
-	get_tree().set_group("Cereza","material_override", null)
+	get_tree().set_group("Cereza","material_overlay", null)
 	pass # Replace with function body.
 
 
 #########################################################
 #################       Mouse click    ###################
-
-
-func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	pass # Replace with function body.
