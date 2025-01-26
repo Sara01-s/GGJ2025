@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qet6pr3d3bf0"]
+[gd_scene load_steps=8 format=3 uid="uid://qet6pr3d3bf0"]
 
 [ext_resource type="Texture2D" uid="uid://cljt5t4b7tmko" path="res://Assets/Cliente3D/Sadako_Idle.png" id="1_1v0ok"]
 [ext_resource type="Script" path="res://Assets/Cliente3D/ClienteScript3D.gd" id="1_w8jg3"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bqy52o2smsp4" path="res://Assets/UI/patiencebarBG.png" id="3_i0ose"]
 [ext_resource type="Texture2D" uid="uid://ckwhw7qi6jp78" path="res://Assets/UI/patiencebarPROG.png" id="4_r4kla"]
 [ext_resource type="Script" path="res://Assets/Cliente/texture_progress_bar.gd" id="5_kigw0"]
-[ext_resource type="Script" path="res://Assets/Nivel/game_controller.gd" id="7_ikill"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_42gur"]
 viewport_path = NodePath("Node3D/SubViewport")
@@ -46,9 +45,5 @@ script = ExtResource("5_kigw0")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.340383, 74.4382, 0)
 texture = SubResource("ViewportTexture_42gur")
 
-[node name="Controlador" type="Node2D" parent="."]
-script = ExtResource("7_ikill")
-
-[connection signal="dañarPersonaje" from="." to="Controlador" method="_on_cliente_dañar_personaje"]
+[connection signal="aumentarDificultad" from="Timer3D" to="Node3D/SubViewport/Paciencia" method="_on_timer_3d_aumentar_dificultad"]
 [connection signal="timeout" from="Timer3D" to="." method="_on_timer_3d_timeout"]
-[connection signal="player_life_updated" from="Controlador" to="." method="_on_controlador_player_life_updated"]

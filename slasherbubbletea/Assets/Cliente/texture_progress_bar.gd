@@ -10,6 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_timer_aumentar_dificultad() -> void:
+func _on_timer_3d_aumentar_dificultad() -> void:
 	max_value = 10
