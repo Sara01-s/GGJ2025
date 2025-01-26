@@ -30,21 +30,21 @@ func _process(delta: float) -> void:
 		logica_vaso.recipe = 0
 		vasoGrande = true
 		vasoChico = false
-		logica_vaso.add_ingredients(logica_vaso.Ingredients.GLASS_BIG)
+		Recipe.add_ingredients(logica_vaso.Ingredients.GLASS_BIG)
 		print(logica_vaso.recipe)
 		vaso.texture = g_vacio
 	if smallCup:
 		logica_vaso.recipe = 0
 		vasoChico = true
 		vasoGrande = false
-		logica_vaso.add_ingredients(logica_vaso.Ingredients.GLASS_SMALL)
+		Recipe.add_ingredients(logica_vaso.Ingredients.GLASS_SMALL)
 		vaso.texture = p_vacio
 	if Cherry && vasoGrande:
-		logica_vaso.add_ingredients(logica_vaso.Ingredients.CHERRY)
+		Recipe.add_ingredients(logica_vaso.Ingredients.CHERRY)
 		vaso.texture = g_cereza
 		print(logica_vaso.recipe)
 	if Milk && vasoGrande:
-		logica_vaso.add_ingredients((logica_vaso.Ingredients.MILK))
+		Recipe.add_ingredients((logica_vaso.Ingredients.MILK))
 		vaso.texture = g_leche_cereza 
 		print(logica_vaso.recipe)
 	if Entregar:
@@ -53,6 +53,7 @@ func _process(delta: float) -> void:
 			print("Receta valida")
 			logica_vaso.recipe = 0
 			vaso.texture = null
+			
 		else:
 			print("Te equivocaste")
 			vidas -= 1

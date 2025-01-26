@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=33 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ghyanu0x402o" path="res://Modelos/tapioca.fbx" id="16_a3t3r"]
 [ext_resource type="PackedScene" uid="uid://bfhscv1y84o66" path="res://Modelos/maracuya.fbx" id="19_4g4e0"]
 [ext_resource type="PackedScene" uid="uid://crtvqmuw1w3an" path="res://Modelos/cereza.fbx" id="20_420qo"]
+[ext_resource type="Script" path="res://Assets/Nivel/game_controller.gd" id="21_xikw5"]
 
 [sub_resource type="Animation" id="Animation_ipqiu"]
 resource_name = "PanRIGHT"
@@ -476,8 +477,13 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 29.9937, 94, 195.551)
 [node name="ClienteSpawner" parent="." instance=ExtResource("12_ykd4p")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)
 
+[node name="GameController" type="Node2D" parent="."]
+script = ExtResource("21_xikw5")
+
 [connection signal="pressed" from="Control/TextureButton2" to="Control" method="_on_texture_button_2_pressed"]
 [connection signal="mouse_entered" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Control/TextureButton" to="Control" method="_on_texture_button_pressed"]
 [connection signal="pedidoEquivocado" from="VasoLogic" to="Control/HBoxContainer" method="_on_vaso_logic_pedido_equivocado"]
+[connection signal="pedidoEquivocado" from="VasoLogic" to="GameController" method="_on_vaso_logic_pedido_equivocado"]
+[connection signal="player_life_updated" from="GameController" to="Control/HBoxContainer" method="_on_game_controller_player_life_updated"]
