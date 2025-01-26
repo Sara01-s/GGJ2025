@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=47 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
 [ext_resource type="AudioStream" uid="uid://d23uc51ujgje6" path="res://Musica/Myers_Customer_Service.wav" id="1_h0fj4"]
@@ -274,6 +274,21 @@ _data = {
 "RESET": SubResource("Animation_h4fo1")
 }
 
+[sub_resource type="Animation" id="Animation_4t5be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(238, 555)]
+}
+
 [sub_resource type="Animation" id="Animation_gh4j2"]
 resource_name = "SlideUp"
 length = 0.5
@@ -288,21 +303,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(238, 555), Vector2(238, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_4t5be"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(238, 555)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6q34j"]
@@ -321,7 +321,7 @@ size = Vector3(13.7367, 6.71283, 10)
 size = Vector3(18.1138, 23.0496, 16.3531)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxlbq"]
-size = Vector3(19.922, 25.2544, 20.3207)
+size = Vector3(12.1975, 25.2544, 20.3207)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kimgh"]
 size = Vector3(7.73428, 12.6671, 9.05219)
@@ -519,7 +519,7 @@ spot_angle = 43.7492
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.719, -1.10005, 164.017)
 
 [node name="Basurero" parent="ObjScen" instance=ExtResource("7_invec")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28.5025, 6.48973, 213.263)
+transform = Transform3D(1.56817, 0, -2.55751, 0, 3, 0, 2.55751, 0, 1.56817, -28.5025, 6.48973, 213.263)
 
 [node name="Cylinder" parent="ObjScen/Basurero" index="0" groups=["basurero"]]
 
@@ -567,7 +567,7 @@ transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 
 [node name="AreaTe" type="Area3D" parent="ObjScen/termo_te"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/termo_te/AreaTe"]
-transform = Transform3D(1, 0, 1.49925e-12, 0, 1, 0, -1.49925e-12, 0, 1, -0.305237, 9.62584, 0.940704)
+transform = Transform3D(0.677505, 0, 0.735509, 0, 1, 0, -0.735509, 0, 0.677505, -0.70462, 9.62584, 1.37424)
 shape = SubResource("BoxShape3D_cxlbq")
 
 [node name="vaso_chico" parent="ObjScen" instance=ExtResource("15_fw3ip")]
@@ -726,6 +726,8 @@ script = ExtResource("21_xikw5")
 [connection signal="mouse_entered" from="ObjScen/Item_Cereza/AreaCere" to="Control" method="_on_area_cere_mouse_entered"]
 [connection signal="mouse_exited" from="ObjScen/Item_Cereza/AreaCere" to="Control" method="_on_area_cere_mouse_exited"]
 [connection signal="pedidoEquivocado" from="VasoLogic" to="Control/HBoxContainer" method="_on_vaso_logic_pedido_equivocado"]
+[connection signal="pedidoEquivocado" from="VasoLogic" to="GameController" method="_on_vaso_logic_pedido_equivocado"]
+[connection signal="player_life_updated" from="GameController" to="Control/HBoxContainer" method="_on_game_controller_player_life_updated"]
 
 [editable path="ObjScen/Basurero"]
 [editable path="ObjScen/hielos"]
@@ -741,5 +743,3 @@ script = ExtResource("21_xikw5")
 [editable path="ObjScen/Item_Maracuya/bandeja3"]
 [editable path="ObjScen/Item_Cereza/cereza"]
 [editable path="ObjScen/Item_Cereza/bandeja4"]
-[connection signal="pedidoEquivocado" from="VasoLogic" to="GameController" method="_on_vaso_logic_pedido_equivocado"]
-[connection signal="player_life_updated" from="GameController" to="Control/HBoxContainer" method="_on_game_controller_player_life_updated"]
