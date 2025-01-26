@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://c7l88rbq43bhs"]
+[gd_scene load_steps=46 format=3 uid="uid://c7l88rbq43bhs"]
 
 [ext_resource type="Texture2D" uid="uid://b0m1myb533jg0" path="res://UI/UI_Arrow.png" id="1_cnaev"]
+[ext_resource type="AudioStream" uid="uid://d23uc51ujgje6" path="res://Musica/Myers_Customer_Service.wav" id="1_h0fj4"]
 [ext_resource type="Script" path="res://UIctrl.gd" id="1_r8htf"]
 [ext_resource type="PackedScene" uid="uid://dvijo3v24r8hx" path="res://Mostrador.fbx" id="1_xv7ot"]
 [ext_resource type="PackedScene" uid="uid://dd1o250dbryaa" path="res://Sala.fbx" id="2_yr3xi"]
@@ -8,13 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://3my20tbrhas7" path="res://Assets/UI/UI_HeartFull.png" id="5_5r3j5"]
 [ext_resource type="PackedScene" uid="uid://dnsghomjeab3e" path="res://Modelos/Pila_vasos_1.fbx" id="5_6ory0"]
 [ext_resource type="PackedScene" uid="uid://drkskqwwgwcfr" path="res://Modelos/Pila_vasos_2.fbx" id="6_r2tuh"]
+[ext_resource type="Texture2D" uid="uid://duprvqfx21330" path="res://UI/Receta_Interior.png" id="7_broix"]
 [ext_resource type="PackedScene" uid="uid://crx47s1jvrj5t" path="res://Modelos/Basurero.fbx" id="7_invec"]
 [ext_resource type="PackedScene" uid="uid://c020fhpgji6v2" path="res://Modelos/bandeja.fbx" id="8_53uk7"]
 [ext_resource type="PackedScene" uid="uid://cniah4xtp0ch6" path="res://Modelos/hielos.fbx" id="9_hqi05"]
+[ext_resource type="PackedScene" uid="uid://lwj6vhoyfanc" path="res://Modelos/termo_te.tscn" id="11_ts27w"]
 [ext_resource type="PackedScene" uid="uid://bcgqn2d2h27ux" path="res://Modelos/jelly.fbx" id="12_dngss"]
 [ext_resource type="PackedScene" uid="uid://d6gbpcuf7mn7" path="res://Assets/Vaso/Vaso.tscn" id="12_x3u7p"]
 [ext_resource type="PackedScene" uid="uid://cre83gvr35s4j" path="res://Assets/ClienteSpawner/cliente_spawner.tscn" id="12_ykd4p"]
-[ext_resource type="PackedScene" uid="uid://bxoc81560xt5l" path="res://Modelos/termo_te.fbx" id="13_fegr4"]
 [ext_resource type="PackedScene" uid="uid://poihqbtearry" path="res://Modelos/termo_leche.fbx" id="14_7j5yt"]
 [ext_resource type="PackedScene" uid="uid://cq3fbokb2nqjx" path="res://Modelos/vaso.fbx" id="15_fw3ip"]
 [ext_resource type="PackedScene" uid="uid://ghyanu0x402o" path="res://Modelos/tapioca.fbx" id="16_a3t3r"]
@@ -99,6 +101,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control/AudioStreamPlayer:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Control/AudioStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_5nvim"]
 resource_name = "StageIntro"
@@ -138,6 +164,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Control/AudioStreamPlayer:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h0fj4")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lc7rl"]
@@ -223,8 +273,72 @@ _data = {
 "RESET": SubResource("Animation_h4fo1")
 }
 
+[sub_resource type="Animation" id="Animation_gh4j2"]
+resource_name = "SlideUp"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(238, 555), Vector2(238, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4t5be"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(238, 555)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q34j"]
+_data = {
+"RESET": SubResource("Animation_4t5be"),
+"SlideUp": SubResource("Animation_gh4j2")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i85i1"]
+size = Vector3(11.443, 16.3931, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyqya"]
+size = Vector3(13.7367, 6.71283, 10)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_4xogq"]
 size = Vector3(18.1138, 23.0496, 16.3531)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxlbq"]
+size = Vector3(19.922, 25.2544, 20.3207)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kimgh"]
+size = Vector3(7.73428, 12.6671, 9.05219)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2r5ak"]
+size = Vector3(7.05261, 12.6064, 7.1153)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gtv8s"]
+size = Vector3(21.8237, 10.3901, 26.3257)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t45c4"]
+size = Vector3(17.4358, 18.4027, 17.6635)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lq6c2"]
+size = Vector3(15.7411, 8.27203, 29.3169)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym7hh"]
+size = Vector3(21.1553, 9.04449, 26.092)
 
 [node name="Node" type="Node"]
 
@@ -241,12 +355,10 @@ autoplay = "StageIntro"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_r8htf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 
 [node name="TextureButton2" type="TextureButton" parent="Control"]
 visible = false
@@ -279,16 +391,6 @@ libraries = {
 }
 speed_scale = 1.385
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 659.0
-focus_mode = 1
-color = Color(0, 0, 0, 1)
-
-[node name="Sala" parent="Control" instance=ExtResource("2_yr3xi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8123, 0, 18.266)
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 0
 offset_left = 950.0
@@ -307,6 +409,33 @@ texture = ExtResource("5_5r3j5")
 [node name="Corazon3" type="TextureRect" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_5r3j5")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 555.0
+offset_right = 2158.0
+offset_bottom = 2844.8
+scale = Vector2(0.29, 0.29)
+pivot_offset = Vector2(40, 0)
+texture = ExtResource("7_broix")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_6q34j")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 659.0
+focus_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Sala" parent="." instance=ExtResource("2_yr3xi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.8123, 0, 18.266)
 
 [node name="Iluminacion" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.34848, 0)
@@ -391,13 +520,41 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.71
 [node name="Basurero" parent="ObjScen" instance=ExtResource("7_invec")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -28.5025, 6.48973, 213.263)
 
+[node name="Cylinder" parent="ObjScen/Basurero" index="0" groups=["basurero"]]
+
+[node name="vaso" parent="ObjScen/Basurero" index="1" groups=["basurero"]]
+
+[node name="pila_vasos_2" parent="ObjScen/Basurero" index="2" groups=["basurero"]]
+
+[node name="pila_vasos_1" parent="ObjScen/Basurero" index="3" groups=["basurero"]]
+
+[node name="pila_vasos_1_001" parent="ObjScen/Basurero" index="4" groups=["basurero"]]
+
+[node name="pila_vasos_2_001" parent="ObjScen/Basurero" index="5" groups=["basurero"]]
+
+[node name="vaso_001" parent="ObjScen/Basurero" index="6" groups=["basurero"]]
+
+[node name="AreaBasu" type="Area3D" parent="ObjScen/Basurero"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/Basurero/AreaBasu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362045, 8.35212, 0)
+shape = SubResource("BoxShape3D_i85i1")
+
 [node name="hielos" parent="ObjScen" instance=ExtResource("9_hqi05")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 233.864, 60.2307, 175.164)
 
-[node name="termo_leche" parent="ObjScen" instance=ExtResource("13_fegr4")]
+[node name="AreaHielo" type="Area3D" parent="ObjScen/hielos"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/hielos/AreaHielo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18573, 2.80231, 0)
+shape = SubResource("BoxShape3D_vyqya")
+
+[node name="termo_leche" parent="ObjScen" instance=ExtResource("11_ts27w")]
 transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 284.208, 61.0148, 201.291)
 
 [node name="Area3D" type="Area3D" parent="ObjScen/termo_leche"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+input_capture_on_drag = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/termo_leche/Area3D"]
 transform = Transform3D(1, 0, 2.24532e-12, 0, 1, 0, -2.24532e-12, 0, 1, 0.960159, 11.0248, 0.0530396)
@@ -406,11 +563,29 @@ shape = SubResource("BoxShape3D_4xogq")
 [node name="termo_te" parent="ObjScen" instance=ExtResource("14_7j5yt")]
 transform = Transform3D(-9.61651e-08, 0, -2.2, 0, 2.2, 0, 2.2, 0, -9.61651e-08, 286.5, 60.8301, 251.449)
 
+[node name="AreaTe" type="Area3D" parent="ObjScen/termo_te"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/termo_te/AreaTe"]
+transform = Transform3D(1, 0, 1.49925e-12, 0, 1, 0, -1.49925e-12, 0, 1, -0.305237, 9.62584, 0.940704)
+shape = SubResource("BoxShape3D_cxlbq")
+
 [node name="vaso_chico" parent="ObjScen" instance=ExtResource("15_fw3ip")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 79.2338, 60.8348, 174.159)
 
+[node name="AreaVasoChi" type="Area3D" parent="ObjScen/vaso_chico"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/vaso_chico/AreaVasoChi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501934, 5.83356, -0.0271912)
+shape = SubResource("BoxShape3D_kimgh")
+
 [node name="grande" parent="ObjScen" instance=ExtResource("15_fw3ip")]
 transform = Transform3D(2, 0, 0, 0, 2.78217, 0, 0, 0, 2, 101.772, 59.6864, 170.339)
+
+[node name="AreaVasogra" type="Area3D" parent="ObjScen/grande"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/grande/AreaVasogra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220154, 5.80319, 0.198334)
+shape = SubResource("BoxShape3D_2r5ak")
 
 [node name="Pila_vasos_2" parent="ObjScen" instance=ExtResource("6_r2tuh")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -63.2422, 60.4577, 217.009)
@@ -423,32 +598,76 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -81.4166, 58.3015, 223.
 [node name="bandeja" parent="ObjScen/Item_Jelly" instance=ExtResource("8_53uk7")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 128.446, 59.7806, 171.6)
 
+[node name="bandeja" parent="ObjScen/Item_Jelly/bandeja" index="0" groups=["Jelly"]]
+
 [node name="jelly" parent="ObjScen/Item_Jelly" instance=ExtResource("12_dngss")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 128.961, 62.3572, 173.42)
+
+[node name="jelly" parent="ObjScen/Item_Jelly/jelly" index="0" groups=["Jelly"]]
+
+[node name="AreaJelly" type="Area3D" parent="ObjScen/Item_Jelly"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.403, 74.09, 172.522)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/Item_Jelly/AreaJelly"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.874268, -9.08046, -0.213623)
+shape = SubResource("BoxShape3D_gtv8s")
 
 [node name="Item_Tapioca" type="Node3D" parent="ObjScen"]
 
 [node name="tapioca" parent="ObjScen/Item_Tapioca" instance=ExtResource("16_a3t3r")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 150.631, 62.8722, 173.55)
 
+[node name="tapicoa" parent="ObjScen/Item_Tapioca/tapioca" index="0" groups=["Tapioca"]]
+
 [node name="bandeja2" parent="ObjScen/Item_Tapioca" instance=ExtResource("8_53uk7")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 149.945, 59.6266, 171.039)
+
+[node name="bandeja" parent="ObjScen/Item_Tapioca/bandeja2" index="0" groups=["Tapioca"]]
+
+[node name="AreaTapi" type="Area3D" parent="ObjScen/Item_Tapioca"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.125, 64.6486, 172.663)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/Item_Tapioca/AreaTapi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92816, 0.890846, -2.50565)
+shape = SubResource("BoxShape3D_t45c4")
 
 [node name="Item_Maracuya" type="Node3D" parent="ObjScen"]
 
 [node name="maracuya" parent="ObjScen/Item_Maracuya" instance=ExtResource("19_4g4e0")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 170.716, 62.4054, 171.234)
 
+[node name="maracuya" parent="ObjScen/Item_Maracuya/maracuya" index="0" groups=["Maracuya"]]
+
 [node name="bandeja3" parent="ObjScen/Item_Maracuya" instance=ExtResource("8_53uk7")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 170.128, 59.6266, 171.039)
+
+[node name="bandeja" parent="ObjScen/Item_Maracuya/bandeja3" index="0" groups=["Maracuya"]]
+
+[node name="AreaMara" type="Area3D" parent="ObjScen/Item_Maracuya"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.195, 66.4593, 171.166)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/Item_Maracuya/AreaMara"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698502, -0.687653, 0.0681152)
+shape = SubResource("BoxShape3D_lq6c2")
 
 [node name="Item_Cereza" type="Node3D" parent="ObjScen"]
 
 [node name="cereza" parent="ObjScen/Item_Cereza" instance=ExtResource("20_420qo")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 191.303, 61.4904, 169.597)
 
+[node name="cereza" parent="ObjScen/Item_Cereza/cereza" index="0" groups=["Cereza"]]
+
 [node name="bandeja4" parent="ObjScen/Item_Cereza" instance=ExtResource("8_53uk7")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 190.475, 59.6266, 171.039)
+
+[node name="bandeja" parent="ObjScen/Item_Cereza/bandeja4" index="0" groups=["Cereza"]]
+
+[node name="AreaCere" type="Area3D" parent="ObjScen/Item_Cereza"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 190.699, 65.4319, 171.113)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjScen/Item_Cereza/AreaCere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275146, -1.069, 0.0423584)
+shape = SubResource("BoxShape3D_ym7hh")
 
 [node name="Clutter" type="Node3D" parent="ObjScen"]
 
@@ -480,4 +699,41 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 94, 114)
 [connection signal="mouse_entered" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_exited" from="Control/TextureButton" to="Control" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="Control/TextureButton" to="Control" method="_on_texture_button_pressed"]
+[connection signal="gui_input" from="Control/TextureRect" to="Control" method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="ObjScen/Basurero/AreaBasu" to="Control" method="_on_area_basu_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/Basurero/AreaBasu" to="Control" method="_on_area_basu_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/hielos/AreaHielo" to="Control" method="_on_area_hielo_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/hielos/AreaHielo" to="Control" method="_on_area_hielo_mouse_exited"]
+[connection signal="input_event" from="ObjScen/termo_leche/Area3D" to="Control" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="ObjScen/termo_leche/Area3D" to="Control" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/termo_leche/Area3D" to="Control" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/termo_te/AreaTe" to="Control" method="_on_area_te_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/termo_te/AreaTe" to="Control" method="_on_area_te_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/vaso_chico/AreaVasoChi" to="Control" method="_on_area_vaso_chi_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/vaso_chico/AreaVasoChi" to="Control" method="_on_area_vaso_chi_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/grande/AreaVasogra" to="Control" method="_on_area_vasogra_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/grande/AreaVasogra" to="Control" method="_on_area_vasogra_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/Item_Jelly/AreaJelly" to="Control" method="_on_area_jelly_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/Item_Jelly/AreaJelly" to="Control" method="_on_area_jelly_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/Item_Tapioca/AreaTapi" to="Control" method="_on_area_tapi_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/Item_Tapioca/AreaTapi" to="Control" method="_on_area_tapi_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/Item_Maracuya/AreaMara" to="Control" method="_on_area_mara_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/Item_Maracuya/AreaMara" to="Control" method="_on_area_mara_mouse_exited"]
+[connection signal="mouse_entered" from="ObjScen/Item_Cereza/AreaCere" to="Control" method="_on_area_cere_mouse_entered"]
+[connection signal="mouse_exited" from="ObjScen/Item_Cereza/AreaCere" to="Control" method="_on_area_cere_mouse_exited"]
 [connection signal="pedidoEquivocado" from="VasoLogic" to="Control/HBoxContainer" method="_on_vaso_logic_pedido_equivocado"]
+
+[editable path="ObjScen/Basurero"]
+[editable path="ObjScen/hielos"]
+[editable path="ObjScen/termo_leche"]
+[editable path="ObjScen/termo_te"]
+[editable path="ObjScen/vaso_chico"]
+[editable path="ObjScen/grande"]
+[editable path="ObjScen/Item_Jelly/bandeja"]
+[editable path="ObjScen/Item_Jelly/jelly"]
+[editable path="ObjScen/Item_Tapioca/tapioca"]
+[editable path="ObjScen/Item_Tapioca/bandeja2"]
+[editable path="ObjScen/Item_Maracuya/maracuya"]
+[editable path="ObjScen/Item_Maracuya/bandeja3"]
+[editable path="ObjScen/Item_Cereza/cereza"]
+[editable path="ObjScen/Item_Cereza/bandeja4"]

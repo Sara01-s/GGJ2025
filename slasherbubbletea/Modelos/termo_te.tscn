@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://lwj6vhoyfanc"]
+
+[ext_resource type="PackedScene" uid="uid://bxoc81560xt5l" path="res://Modelos/termo_te.fbx" id="1_xxap3"]
+
+[node name="termo_te" instance=ExtResource("1_xxap3")]
